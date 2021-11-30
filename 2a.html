@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Title 2</title>
+</head>
+<body>
+<span>Player 1: </span><input type="number" id="player_1" placeholder="12345"/> <br>
+<span>Player 2: </span><input type="number" id="player_2" placeholder="12345"/> <br>
+<button onClick="onSubmit()">Generate</button>
+<p>Output: <span id="result"></span></p>
+<script>
+    function onSubmit() {
+        let player1 = document.getElementById('player_1').value;
+        let player2 = document.getElementById('player_2').value;
+        player1 = player1.split("");
+        player2 = player2.split("");
+        let countPlayer1 = 0;
+        let countPlayer2 = 0;
+        let arr = [];
+        if (player1.length !== player2.length){
+            return document.getElementById('result').innerText = 'Both players must have same number of scores';
+        }
+        for(let i=0; i<player1.length; i++) {
+            if (player1[i] > player2[i]) {
+                // do something if player1 score is greater than player2
+                countPlayer1 = countPlayer1 + 1;
+            } else if (player1[i] < player2[i]) {
+                // do something if player1 score is greater than player2
+                countPlayer2 = countPlayer2 + 1;
+            }
+        }
+        arr.push(countPlayer1);
+        arr.push(countPlayer2);
+        console.log(`Player score is:  ${arr}`)
+        document.getElementById('result').innerText = JSON.stringify(arr);
+    }
+</script>
+</body>
+</html>
