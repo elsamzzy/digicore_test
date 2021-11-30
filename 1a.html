@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Title 1</title>
+</head>
+<body>
+    <input type="text" id="form" />
+    <button onClick="onSubmit()">Calculate</button>
+    <p>Output: <span id="result"></span></p>
+<script>
+    function onSubmit() {
+        const input = document.getElementById('form').value;
+        const val = input.split("")
+        document.getElementById('result').innerText = eval(val.join(' '));
+    }
+</script>
+</body>
+</html>
