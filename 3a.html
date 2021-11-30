@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span>x1: </span><input type="number" id="x1" placeholder="1"/> <br>
+<span>x2: </span><input type="number" id="x2" placeholder="2"/> <br>
+<span>v1: </span><input type="number" id="v1" placeholder="2"/> <br>
+<span>v2: </span><input type="number" id="v2" placeholder="1"/> <br>
+<button onClick="onSubmit()">Evaluate</button>
+<p>Output: <span id="result"></span></p>
+<script>
+    function onSubmit() {
+        let x1 = document.getElementById('x1').value;
+        let x2 = document.getElementById('x2').value;
+        let v1 = document.getElementById('v1').value;
+        let v2 = document.getElementById('v2').value;
+        let firstCal = eval(`${x1}+${v1}`);
+        let secondCal = eval(`${x2}+${v2}`);
+        if (firstCal === secondCal) {
+            return document.getElementById('result').innerText = 'YES';
+        } else {
+            return document.getElementById('result').innerText = 'NO';
+        }
+    }
+</script>
+</body>
+</html>
